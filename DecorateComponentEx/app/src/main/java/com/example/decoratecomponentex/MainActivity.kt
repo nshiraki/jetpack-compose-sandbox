@@ -14,12 +14,14 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -101,14 +103,17 @@ fun AppScreen() {
         )
 
         // コンポーネントのサイズとオフセットの位置を調整
+        // 文字列の表示位置をTextの中央に配置するように調整
         Text(
             text = "Hello",
+            textAlign = TextAlign.Center,
             modifier = Modifier
                 .size(120.dp, 80.dp)
                 .offset(20.dp, 20.dp)
                 .background(Color.LightGray, RoundedCornerShape(20.dp))
                 .border(2.dp, Color.DarkGray, RoundedCornerShape(20.dp))
                 .padding(20.dp)
+                .wrapContentHeight(),
         )
     }
 }
