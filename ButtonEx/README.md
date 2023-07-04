@@ -1,5 +1,5 @@
 # ButtonEx
 
-Buttonコンポーネントを利用した処理を作成する
+Buttonコンポーネントを利用して、簡単なカウンターアプリを作成する
 
 <img src="screenshot/img.png" width="320px">
