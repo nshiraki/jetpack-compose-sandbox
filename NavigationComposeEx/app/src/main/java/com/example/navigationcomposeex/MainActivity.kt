@@ -21,15 +21,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppScreen()
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun AppScreen() {
-    // TODO: "Not yet implemented"
 }
 
 @Preview(showBackground = true)
