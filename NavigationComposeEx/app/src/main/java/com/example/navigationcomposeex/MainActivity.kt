@@ -16,11 +16,44 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            SetupNavHost()
+        }
+    }
+}
+
+// 画面遷移のセットアップを行う
+@Composable
+fun SetupNavHost() {
+    val navController = rememberNavController()
+
+    NavHost(
+        navController = navController,
+        startDestination = "screen1"
+    ) {
+        // 画面遷移に関するコンポーザブルを登録
+        composable(route = "screen1") {
+            Screen1(
+                onButtonClick = {
+                    // 特定の画面へ遷移
+                    navController.navigate("screen2")
+                }
+            )
+        }
+        composable(route = "screen2") {
+            Screen2(
+                onButtonClick = {
+                    // アプリ内の前の画面に戻る
+                    navController.navigateUp()
+                }
+            )
         }
     }
 }
