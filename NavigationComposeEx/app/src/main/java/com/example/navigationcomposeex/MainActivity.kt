@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun Screen1(onClickButton: () -> Unit = {}) {
+fun Screen1(onButtonClick: () -> Unit = {}) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -35,7 +35,7 @@ fun Screen1(onClickButton: () -> Unit = {}) {
     ) {
         Text(text = "Screen1", fontSize = 24.sp)
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = onClickButton) {
+        Button(onClick = onButtonClick) {
             Text(text = "Go to Screen2")
         }
     }
@@ -43,7 +43,7 @@ fun Screen1(onClickButton: () -> Unit = {}) {
 
 @Preview(showBackground = true)
 @Composable
-fun Screen2(onClickButton: () -> Unit = {}) {
+fun Screen2(onButtonClick: () -> Unit = {}) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -51,7 +51,7 @@ fun Screen2(onClickButton: () -> Unit = {}) {
     ) {
         Text(text = "Screen2", fontSize = 24.sp)
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = onClickButton) {
+        Button(onClick = onButtonClick) {
             Text(text = "Back to Screen1")
         }
     }
