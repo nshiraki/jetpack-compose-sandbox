@@ -45,9 +45,10 @@ fun GroupedCheckBox() {
     val items = listOf("a", "b", "c", "d")
     val result = remember { mutableStateOf("") }
 
+    // グループ化したチェックボックスを生成
     Column(horizontalAlignment = Alignment.Start) {
 
-        // グループ化したチェックボックスを生成
+        // ラベリングしたチェックボックスを生成
         items.forEach { item ->
             val checkedState = remember { mutableStateOf(true) }
 
